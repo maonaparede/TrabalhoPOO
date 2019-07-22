@@ -1,5 +1,6 @@
 package com.example.trabalho1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,8 @@ public class Tela3 extends AppCompatActivity {
         }
 
         public void proxima(View view){
+            Intent intent = new Intent(this, Tela4.class);
+            Bundle cores = new Bundle();
             String texto = "você selecionou:";
 
             if (azul.isChecked()) {
@@ -35,5 +38,9 @@ public class Tela3 extends AppCompatActivity {
             if (vermelho.isChecked()) {
                 texto += "Vermelho";
             }
+
+            cores.putString("texto1", texto);
+            intent.putExtras(cores);
+            startActivity(intent);
         }
     }

@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 if(position == 0){
+                    //toast
                     Toast.makeText(getApplicationContext(),
                             "Indo para a Tela 2 ", Toast.LENGTH_LONG).show();
                         //vai pra tela 2
