@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Tela2"
-    android:background="#333">
+    android:background="#333"
+    tools:context="Tela2">
 
     <EditText
         android:id="@+id/editText"
@@ -18,14 +18,15 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:text="Texto"
         android:textColor="#999"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.349" />
+        app:layout_constraintVertical_bias="0.349"
+        tools:text="Texto" />
 
     <Button
         android:id="@+id/button"
@@ -57,7 +58,7 @@
         android:layout_marginBottom="8dp"
         android:text="   Tela 2"
         android:textColor="#ffff"
-        android:textSize="40dp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -108,7 +109,8 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:text="Texto 1" />
-    </RadioGroup><![CDATA[
+    </RadioGroup>
+    <![CDATA[
 
     />
 
