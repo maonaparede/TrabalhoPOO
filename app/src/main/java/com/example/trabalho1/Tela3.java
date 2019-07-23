@@ -10,9 +10,6 @@ import android.widget.CheckBox;
 public class Tela3 extends AppCompatActivity {
 
 
-    CheckBox azul = (CheckBox) findViewById(R.id.azul);
-    CheckBox verde = (CheckBox) findViewById(R.id.verde);
-    CheckBox vermelho = (CheckBox) findViewById(R.id.vermelho);
 
 
     @Override
@@ -25,6 +22,10 @@ public class Tela3 extends AppCompatActivity {
         }
 
         public void proxima(View view){
+            CheckBox azul = (CheckBox) findViewById(R.id.azul);
+            CheckBox verde = (CheckBox) findViewById(R.id.verde);
+            CheckBox vermelho = (CheckBox) findViewById(R.id.vermelho);
+
             Intent intent = new Intent(this, Tela4.class);
             Bundle cores = new Bundle();
             String texto = "você selecionou:";
