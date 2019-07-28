@@ -3,6 +3,8 @@ package com.example.trabalho1;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -21,9 +23,14 @@ public class Tela4 extends AppCompatActivity {
     public static final String nomeCanal = "canal";
     public static final String idCanal = "001";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
         setContentView(R.layout.activity_tela4);
 
         TextView saida = (TextView) findViewById(R.id.saida);
@@ -41,34 +48,30 @@ public class Tela4 extends AppCompatActivity {
 
     public void proxima(View view){
 
-        createChannels();
+        Intent intent2 = new Intent(this, MainActivity.class);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, idCanal);
-
-        builder.setSmallIcon(R.drawable.polegar);
-        builder.setContentTitle("Trabalho Finalizado");
-        builder.setContentText("Agora é hora de ir Jogar FFXV");
-        builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
-        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
-        notificationManagerCompat.notify(1, builder.build());
-
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-
-    public void createChannels() {
-
-        // create android channel
-        NotificationChannel canal = null;
+        //Verifica a versão API>26, e cria o canal
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            canal = new NotificationChannel(nomeCanal,
+            NotificationChannel canal = new NotificationChannel(nomeCanal,
                     idCanal, NotificationManager.IMPORTANCE_DEFAULT);
-
 
             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
             notificationManager.createNotificationChannel(canal);
         }
+
+        //Cria a notificação
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, idCanal)
+                .setSmallIcon( R.drawable.like )
+                .setContentTitle( "Trabalho Finalizado" )
+                .setContentText( "; )" )
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        NotificationManager notifyManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notifyManager.notify( 11, builder.build());
+
+
+        startActivity(intent2);
+
     }
+
 }
