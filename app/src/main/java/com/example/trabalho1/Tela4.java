@@ -19,17 +19,9 @@ import android.widget.TextView;
 public class Tela4 extends AppCompatActivity {
 
 
-
-    public static final String nomeCanal = "canal";
-    public static final String idCanal = "001";
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
 
         setContentView(R.layout.activity_tela4);
 
@@ -52,16 +44,16 @@ public class Tela4 extends AppCompatActivity {
 
         //Verifica a versão API>26, e cria o canal
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel canal = new NotificationChannel(nomeCanal,
-                    idCanal, NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel canal = new NotificationChannel("001",
+                    "canal", NotificationManager.IMPORTANCE_DEFAULT);
 
-            NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-            notificationManager.createNotificationChannel(canal);
+            NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            nm.createNotificationChannel(canal);
         }
 
         //Cria a notificação
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, idCanal)
-                .setSmallIcon( R.drawable.like )
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "001")
+                .setSmallIcon( R.drawable.ic_launcher )
                 .setContentTitle( "Trabalho Finalizado" )
                 .setContentText( "; )" )
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
