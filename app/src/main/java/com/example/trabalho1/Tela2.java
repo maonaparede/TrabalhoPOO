@@ -17,8 +17,11 @@ public class Tela2 extends AppCompatActivity {
         setContentView(R.layout.activity_tela2);
 
         //Radio Groups
+
          RadioGroup verOpcao = (RadioGroup) findViewById(R.id.radioGroup2);
+
         //verifica se for clickado
+
         verOpcao.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup grupo, int posicao) {
@@ -31,7 +34,8 @@ public class Tela2 extends AppCompatActivity {
 
     }
 
-    //Pega o Campo de texto e manda pra outra tela
+        //Pega o Campo de texto e manda pra outra tela
+
     public void proxima(View view){
 
         EditText texto2 = (EditText) findViewById(R.id.editText);
@@ -40,10 +44,10 @@ public class Tela2 extends AppCompatActivity {
         Bundle textinho = new Bundle();
         String texto = texto2.getText().toString();
 
-
-
         textinho.putString("texto2", texto);
         intent.putExtras(textinho);
+
+            //Proxima Tela
         startActivity(intent);
     }
 }

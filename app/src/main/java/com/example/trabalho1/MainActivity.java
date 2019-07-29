@@ -18,14 +18,10 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
 
         ListView lista = (ListView) findViewById(R.id.Lista);
 
@@ -35,12 +31,13 @@ public class MainActivity extends AppCompatActivity {
         telas.add("Teste AlertDialog");
 
 
-        //Encaixar No Layout
-        ArrayAdapter<String> arrayAdapter =
-                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1 , telas);
+        //Encaixa as opções no Layout
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1 , telas);
         lista.setAdapter(arrayAdapter);
 
+
         //Pegar a posição da ListView
+
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,

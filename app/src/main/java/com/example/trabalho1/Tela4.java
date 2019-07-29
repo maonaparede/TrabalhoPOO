@@ -28,16 +28,18 @@ public class Tela4 extends AppCompatActivity {
         TextView saida = (TextView) findViewById(R.id.saida);
         TextView saida1 = (TextView) findViewById(R.id.saida1);
 
+            //Pega o Bundle
         Bundle camposPreenchidos;
         camposPreenchidos = getIntent().getExtras();
-
+            //Converte em String
         String texto = camposPreenchidos.getString("texto1");
         String texto2 = camposPreenchidos.getString("texto2");
-
+            //Seta os textos
         saida.setText(texto);
         saida1.setText(texto2);
     }
 
+        //Botão que aciona a atividade e volta pra 1° tela
     public void proxima(View view){
 
         Intent intent2 = new Intent(this, MainActivity.class);
@@ -61,7 +63,7 @@ public class Tela4 extends AppCompatActivity {
         NotificationManager notifyManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         notifyManager.notify( 11, builder.build());
 
-
+        //proxima tela
         startActivity(intent2);
 
     }
